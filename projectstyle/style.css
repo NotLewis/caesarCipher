@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,800');
+
+/* Our webfont was loaded by the code above */
+
+body {
+    font-family: 'Nunito Sans', avenir, arial, sans-serif;
+    color: #444;
+    max-width: 1024px;
+    margin: 30px auto;
+    line-height: 1.35;
+}
+
+
+/* use the sensible border-box method of sizing boxes */
+
+
+/* see https://css-tricks.com/box-sizing/ */
+
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/* add the font to places where it is not inherited */
+
+select,
+textarea,
+button,
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="submit"],
+input[type="button"],
+input[type="search"] {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1em;
+    padding: 7px;
+    border: 1px solid #AEB2D1;
+    border-radius: 0.2em;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+    background: #fff;
+}
+
+input[type="search"] {
+    background-image: url(https://cdnjs.cloudflare.com/ajax/libs/topcoat-icons/0.1.0/svg/search.svg);
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 30px;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    display: inline-block;
+    margin: 0.2em 0;
+    padding: 7px 20px;
+    font-weight: bold;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    padding: 3px 0;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    cursor: pointer;
+    background-color: #e3e4ef;
+}
+
+
+/* some basic styling */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0 0 0.2em 0;
+    font-size: 1em;
+    line-height: 1;
+}
+
+p+h1,
+p+h2,
+p+h3,
+p+h4,
+p+h5,
+p+h6 {
+    padding-top: 1em;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #222;
+}
+
+h4 {
+    color: #777;
+}
+
+q {
+    quotes: "â€˜" "â€™" "â€œ" "â€";
+}
+
+a {
+    font-weight: bold;
+    color: #0923D1;
+}
+
+ul {
+    list-style-type: square;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    padding: 0 15px;
+}
+
+p {
+    margin: 0;
+    padding: 0 0 0.5em 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+table th {
+    text-align: left;
+    padding: 7px 10px;
+}
+
+@media screen and (max-width: 800px) {
+    table th {
+        display: block;
+        width: 100%;
+    }
+}
+
+table td {
+    border-top: 1px solid #e3e4ef;
+    /* 40% opacity of rule colour - just too dark and distracting otherwise */
+    padding: 7px 10px;
+}
+
+@media screen and (max-width: 800px) {
+    table td {
+        display: block;
+        width: 100%;
+    }
+    table tr:nth-child(2n) td {
+        background: #f1f2f7;
+        /* 20% opacity of rule colour - just too dark and distracting otherwise */
+    }
+}
+
+header {
+    padding: 30px 0 10px;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+nav {
+    margin-bottom: 3em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: sticky;
+    background: #e3e4ef;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-bottom: 1px solid #AEB2D1;
+}
+
+@media screen and (min-width: 800px) {
+    nav ul li {
+        display: inline-block;
+    }
+    nav ul li a {
+        display: inline-block;
+        border: 0;
+    }
+    nav ul li+li a {
+        border-left: 1px solid #AEB2D1;
+    }
+}
+
+nav ul li a:hover {
+    color: #222;
+}
+
+footer {
+    margin-top: 5em;
+    border-top: 1px solid #AEB2D1;
+    padding: 7px 0;
+    font-size: 0.85em;
+}
+
+footer a {
+    color: #777;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+.feedback {
+    background: #f2e9df;
+    border-radius: 0.2em;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 0.3em;
+}
+
+.feedback p {
+    margin: 0;
+    padding: 0;
+}
+
+.feedback.error p {
+    color: #CC2E0D;
+    font-weight: bold;
+}
+
+blockquote {
+    background: #e3e4ef;
+    font-size: 1.2em;
+    padding: 20px 30px;
+    margin: 10px 0;
+    border-radius: 0.2em;
+}
+
+blockquote p {
+    margin: 0;
+    padding: 0;
+}
+
+blockquote p+p {
+    padding-top: 10px;
+}
+
+.panel {
+    background: #e3e4ef;
+    border-radius: 1em;
+    padding: 20px;
+    margin: 0 0 20px 0;
+    clear: both;
+}
+
+@media screen and (min-width: 800px) {
+    .panel.side-by-side {
+        float: left;
+        width: 49%;
+        clear: none;
+    }
+    .panel.side-by-side+.side-by-side {
+        margin-left: 2%;
+    }
+}
+
+.panel img {
+    display: block;
+    margin: 0 auto;
+    border: 10px solid #fff;
+}
+
+.text-heading {
+    display: block;
+    font-weight: bold;
+}
+
+fieldset {
+    border: 0;
+    border-top: 1px solid #AEB2D1;
+    padding: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.readout {
+    background: #e3e4ef;
+    border-radius: 0.5em;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.readout>* {
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.readout.big {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.show-hide {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.show-hide h3 {
+    border-top: 1px solid #eee;
+    padding: 12px 10px;
+    margin: 0;
+    color: #0923D1;
+}
+
+.show-hide h3:hover {
+    cursor: pointer;
+    color: #222;
+}
+
+.content-to-show {
+    padding: 0 10px 10px 10px;
+}

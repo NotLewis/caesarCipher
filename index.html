@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Encryptor</title>
+<link rel="stylesheet" href="projectstyle/style.css" />
+</head>
+<body>
+<!-- encrypt input and button -->
+
+<div class="container"> 
+    <h1>Welcome to the encryptor</h1>
+
+        <div class="panel">
+            Please set the key required here and press enter, then enter a message below for encrytopion and / or decryption: 
+            <select id="keyOption">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected="selected">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            </select> 
+        </div>
+
+<div id="encrypDiv" class="panel side-by-side">
+<h2>Encryptor</h2>
+<p>Type in a message to be encrypted here:</p>
+<textarea id="input" rows="4" cols="45" placeholder="Your message:">
+</textarea>
+<button id ="encryptor">Encrypt</button> 
+<p>Your message was:</p>
+<p id="output1"></p>
+<p>This has been encrypted as:</p>
+<p id="output2"></p>
+ </div>
+
+<div id="decrypDiv" class="panel side-by-side">
+<h2>Decryptor</h2>
+<p>Type in a message to be decrypted here:</p>
+<textarea id="inputdec" rows="4" cols="45" placeholder="Your message:">
+</textarea>
+<button id ="decryptor">Decrypt</button> 
+<p>Your encyrpted message was:</p>
+<p id="outputdec1"></p>
+<p>This has been decrypted as:</p>
+<p id="outputdec2"></p>
+</div>
+</div>
+
+<script>
+var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    
+//encryptor
+encryptor.addEventListener("click", encrypt, false);  
+function encrypt(){
+    var key = parseInt(document.getElementById("keyOption").value); 
+    var word = input.value.toLowerCase();
+    output2.innerHTML = ""
+    output1.innerHTML = input.value
+
+for (var i = 0; i < word.length; i++) {   
+	if(alphabet.indexOf(word.charAt(i)) + key >= 26) {	 
+		var letterNumber = alphabet.indexOf(word.charAt(i)) - (26 - key);	
+		var newLetter = alphabet[letterNumber]
+		output2.innerHTML += newLetter
+    }else if (word.charAt(i) == " "){
+			newLetter = " "
+			output2.innerHTML += newLetter
+	} else { 
+		var letterNumber = alphabet.indexOf(word.charAt(i)) + key;
+		var newLetter = alphabet[letterNumber]
+		output2.innerHTML += newLetter
+		
+}}
+} //end of encry
+
+//decryptor
+decryptor.addEventListener("click", decrypt, false);  
+function decrypt(){ 
+    var key = parseInt(document.getElementById("keyOption").value); 
+    var encWord = inputdec.value.toLowerCase()
+    outputdec2.innerHTML = ""    
+    outputdec1.innerHTML = inputdec.value
+
+for (var counter = 0; counter < encWord.length; counter++) { 
+	if(alphabet.indexOf(encWord.charAt(counter)) - key >= 0) {
+		var decLetterNumber = alphabet.indexOf(encWord.charAt(counter)) - key; //minus key
+		var decNewLetter = alphabet[decLetterNumber] //input decryp number into alphabet
+		outputdec2.innerHTML += decNewLetter //outputs new letter
+	} else if (encWord.charAt(counter) == " "){
+			newLetter = " "
+			outputdec2.innerHTML += newLetter	
+	} else {
+		var decLetterNumber = alphabet.indexOf(encWord.charAt(counter)) + (26 - key); //minus key to decrypt
+		var decNewLetter = alphabet[decLetterNumber] //input decryp number into alphabet
+		outputdec2.innerHTML += decNewLetter //outputs new letter
+}}
+}
+
+</script>
+</body>	
+</html>
